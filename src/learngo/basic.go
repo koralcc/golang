@@ -4,6 +4,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"math/cmplx"
 )
 
 //函数外面(包内)定义变量不能用 :=，可以用var()定义多个
@@ -26,11 +27,15 @@ func variableZeroValue() {
 }
 
 func triangle() {
-	var a, b float64 = 3, 4
-	var c float64 = math.Sqrt(a * b)
+	var a, b int = 3, 4
+	//类型转换是强制的，没有自动转换
+	var c int = int(math.Sqrt(float64(a*a + b*b)))
 	fmt.Println(c)
 }
 
+func euler() {
+	fmt.Printf("%3.f\n", cmplx.Exp(1i*math.Pi)+1)
+}
 func variableInitialValue() {
 	//go语言可进行多个变量的初始化定义
 	var a, b int = 1, 2
@@ -56,6 +61,8 @@ func main() {
 	variableInitialValue()
 	varibaleTypeDeduction()
 	variableShorter()
+	triangle()
+	euler()
 	fmt.Println(aa, ss, bb)
 
 }
