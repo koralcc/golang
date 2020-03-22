@@ -36,6 +36,42 @@ func triangle() {
 func euler() {
 	fmt.Printf("%3.f\n", cmplx.Exp(1i*math.Pi)+1)
 }
+
+func consts() {
+	const a string = "abc"
+	const (
+		filename = "abc.txt"
+		b, c     = 3, 4
+	)
+	var d int
+	d = int(math.Sqrt(b*b + c*c))
+	fmt.Println(a, filename, d)
+}
+
+//golang没有枚举的关键字，可用常量的方式进行枚举的定义
+func enums() {
+	const (
+		cpp = iota
+		_
+		apex
+		java   = 1
+		python = 2
+		golang = 3
+	)
+
+	const (
+		b = 1 << (10 * iota)
+		kb
+		mb
+		gb
+		tb
+		pb
+	)
+
+	fmt.Println(cpp, apex, java, python, golang)
+	fmt.Println(b, kb, mb, gb, tb, pb)
+}
+
 func variableInitialValue() {
 	//go语言可进行多个变量的初始化定义
 	var a, b int = 1, 2
@@ -64,5 +100,6 @@ func main() {
 	triangle()
 	euler()
 	fmt.Println(aa, ss, bb)
-
+	consts()
+	enums()
 }
