@@ -1,6 +1,6 @@
 package main
 
-//fmt/math 是 Go 的标准库，它其实是去 GOROOT 下去加载该模块，当然 Go 的 import 还支持如下两种方式来加载自己写的模块：
+//fmt、math 是 Go 的标准库，它其实是去 GOROOT 下去加载该模块，当然 Go 的 import 还支持如下两种方式来加载自己写的模块：
 import (
 	"fmt"
 	"math"
